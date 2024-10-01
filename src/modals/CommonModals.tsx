@@ -11,7 +11,7 @@ export interface IGenre {
   selected: boolean;
 }
 
-export interface IAxiosResponse<T> {
+export interface IAxiosResponse {
   data: any
 }
 

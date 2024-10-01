@@ -2,19 +2,11 @@ import { apiEndPoints } from '../constants/apiConstants';
 import { IAxiosResponse, IMovie, IMovieDetailsResponse } from '../modals/CommonModals';
 import instance from './axiosInstance';
 
-function addImagesToMovies(moviesData: IMovie[]) {
-  const updatedList = moviesData.map((movie) => ({
-    ...movie,
-    poster: movie.poster,
-    heroImg: movie.poster,
-  }));
-  return updatedList
-}
 
 function getUniqueMovieGenres(moviesData: IMovie[]) {
   const genres: string[] = [];
   moviesData.forEach((movie) => {
-    movie.genre.forEach((genre) => {
+    movie?.genre?.forEach((genre) => {
       !genres.includes(genre) &&
         genres.push(genre);
     });
@@ -29,7 +21,7 @@ export interface IMoviesResponse {
 
 export const getMovies = async (): Promise<IMoviesResponse> => {
   try {
-    const response: IAxiosResponse<IMovie[]> = await instance.get(apiEndPoints.getMovies);
+    const response: IAxiosResponse = await instance.get(apiEndPoints.getMovies);
     console.log(response.data)
     const movies = response.data
     
@@ -46,7 +38,7 @@ export const getMovies = async (): Promise<IMoviesResponse> => {
 
 export const getSpecificMovies = async (id: string): Promise<IMovieDetailsResponse> => {
   try {
-    const response: IAxiosResponse<IMovieDetailsResponse> = await instance.get(`${apiEndPoints.getMovies}/${id}`);
+    const response: IAxiosResponse = await instance.get(`${apiEndPoints.getMovies}/${id}`);
     console.log(response.data)
     return response.data
   } catch (error) {
