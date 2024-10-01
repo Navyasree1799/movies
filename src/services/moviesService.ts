@@ -22,7 +22,6 @@ export interface IMoviesResponse {
 export const getMovies = async (): Promise<IMoviesResponse> => {
   try {
     const response: IAxiosResponse = await instance.get(apiEndPoints.getMovies);
-    console.log(response.data)
     const movies = response.data
     
     const movieGenres = getUniqueMovieGenres(response.data)
@@ -39,7 +38,6 @@ export const getMovies = async (): Promise<IMoviesResponse> => {
 export const getSpecificMovies = async (id: string): Promise<IMovieDetailsResponse> => {
   try {
     const response: IAxiosResponse = await instance.get(`${apiEndPoints.getMovies}/${id}`);
-    console.log(response.data)
     return response.data
   } catch (error) {
     console.error('Error fetching movies:', error);
