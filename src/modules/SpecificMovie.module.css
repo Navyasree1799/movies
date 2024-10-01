@@ -1,0 +1,38 @@
+.movieContent {
+  text-align: center;
+  width: 50%;
+  min-width: 300px
+}
+
+.movieHeroImg {
+  max-width: 80vw;
+  max-height: 60vh;
+}
+
+.movieGenre {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+h2{
+  margin-bottom: 0;
+}
+
+.characterName {
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.cast {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  grid-gap: 10px;
+  text-align: justify;
+  grid-row-gap: 15px;
+  grid-column-gap: 20px;
+  text-align: center;
+}

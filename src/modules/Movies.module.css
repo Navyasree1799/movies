@@ -1,0 +1,85 @@
+.searchBox {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.searchIcon {
+  margin-right: 10px;
+}
+
+.inputBox {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+
+.moviesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
+  text-align: justify;
+  grid-row-gap: 15px;
+  grid-column-gap: 20px;
+  text-align: center;
+}
+
+.moviePoster {
+  width: 200px;
+  height: 300px;
+  transition: filter 1.5s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.moviePosterFiltered {
+  width: 200px;
+  height: 300px;
+  transition: filter 1.5s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.moviePosterFiltered:not(:hover) {
+  filter: grayscale(100%);
+  opacity: 0.75;
+}
+
+.movieTitle {
+  color: white;
+}
+
+.genreContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.movieGenre {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.movieCard {
+  cursor: pointer;
+  transition: filter 0.5s ease-in, filter 1.5s ease-out,
+    transform 0.3s ease-in-out;
+}
+
+.movieCard:hover {
+  transform: scale(1.1);
+}
+
+.noResultsFound {
+  text-align: center;
+}

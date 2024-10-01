@@ -1,0 +1,1 @@
+export const scrollToTop = (top:number = 150) => window.scrollTo({top, behavior: 'smooth' });
