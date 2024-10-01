@@ -1,7 +1,7 @@
 export interface IMovie {
   id: string;
   title: string;
-  genre: string[];
+  genre?: string[];
   poster?: string;
   heroImg?: string;
 }

@@ -38,7 +38,7 @@ const MoviesList = (props: MoviesListProps) => {
         (movie) =>
           movie.title.toLowerCase().includes(search.toLowerCase()) &&
           (selectedGenres.length > 0
-            ? selectedGenres.some((genre) => movie.genre.includes(genre))
+            ? selectedGenres.some((genre) => movie?.genre?.includes(genre))
             : true)
       );
     } else {
